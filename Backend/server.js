@@ -7,7 +7,10 @@ const app = express();
 app.use(bodyParser.json()); // Enable JSON parsing
 
 const cors = require("cors");
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"], // Allow both ports
+    credentials: true
+}));
 
 
 // Define routes
